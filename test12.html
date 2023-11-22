@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      width: 300px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #loginMessage {
+      margin-top: 10px;
+      color: #e74c3c;
+    }
+
+    #successMessage {
+      margin-top: 10px;
+      color: #2ecc71;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="username">Gebruikersnaam:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Wachtwoord:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="button" onclick="login()">Inloggen</button>
+    </form>
+    <p id="loginMessage"></p>
+    <p id="successMessage"></p>
+  </div>
+
+  <script>
+    function login() {
+      var usernameInput = document.getElementById('username');
+      var passwordInput = document.getElementById('password');
+      var loginMessage = document.getElementById('loginMessage');
+      var successMessage = document.getElementById('successMessage');
+
+      var username = usernameInput.value;
+      var password = passwordInput.value;
+
+      // Controleer de inloggegevens
+      if (username === 'Diego' && password === '36mjn2o0') {
+        loginMessage.innerHTML = '';
+        successMessage.innerHTML = 'Goed gedaan! Je hebt het wachtwoord en de gebruikersnaam.';
+      } else {
+        successMessage.innerHTML = '';
+        loginMessage.innerHTML = 'Het wachtwoord of de gebruikersnaam is fout. Probeer opnieuw.';
+      }
+    }
+  </script>
+</body>
+</html>
